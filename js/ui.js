@@ -30,4 +30,8 @@ class UI {
       <h3 class="page-heading mb-3">Latest repos</h3>
     `;
   }
+
+  clearProfile() {
+    this.profile.innerHTML = '';
+  }
 }
