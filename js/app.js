@@ -1,4 +1,5 @@
-const github = new GitHub;
+const github = new GitHub,
+      ui = new UI;
 
 const searchUser = document.getElementById('searchUser');
 
@@ -8,7 +9,13 @@ searchUser.addEventListener('keyup', (e) => {
   if (userText !== '') {
     github.getUser(userText)
       .then(data => {
-        console.log(data);
+        if (data.profile.message === 'Not Found') {
+
+        } else {
+          ui.showProfile(data.profile);
+        }
       })
+  } else {
+
   }
 })
